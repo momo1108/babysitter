@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "Btnfunction.css";
+@import "Detailsrch.css";
+#container {
+    padding-top: 80px;
+    background-color: rgb(236, 236, 236);
+}
+.bodydiv {
+    background-color: rgb(236, 236, 236);
+}
+.alert {position: fixed;z-index: 10000;left: 0;top: 0;width: 100%;max-width: 1200px;}

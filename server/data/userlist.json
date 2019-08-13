@@ -1,0 +1,42 @@
+{
+    "1111": {
+        "userId": "1111",
+        "userName": "",
+        "salt": "nHEBh5d/8L+cc6TALK4HrCSG1f5509QgtsL/zJm+9eRmXqKuPJSszcs4QvyJG4xTeptcJFFCJP3rpNgNrc2b7A==",
+        "pwd": "+DSPG0ZBoqg8vNjifNTch4sPLk+dc5+gzHcDHrBTmu4LVk67EoznggboLSyWWawc/pRyVToZwyQ+HzjtNKEe4flCOQLLSDQ1kZ16/Co35/3G1/z8rmvbvOoxRSGhqgn4/r8RvbiMEY7+CtcXzt2nVnPfrhazOUUyqEyKri6RRYg=",
+        "birthDay": "",
+        "phone": ""
+    },
+    "aforro": {
+        "userId": "aforro",
+        "userName": "",
+        "salt": "gRr0Yf6JpfEB1q/vVs7P1PoPUw0JvjH+wBqtsBO/znIMc5iqfHGRXWHVRp23SKCIUbyclGvVZfdDN8ntd9KGXQ==",
+        "pwd": "J7KfSv3VxWWUqp7+3ALaIhqgB0+sP2SZrkhPsy6Cry5Jg2u2v0IDJGC8yP6se1AkUNwhqjEcWWwX5SjTpxEXuVpHcV+wsO//VatFN3nd09u++/p2Y9eKwNV0bIzlwJlJVjVSzJzqQBEPVoIxV5d75DQyCLNyvqwCxTj+vmgdtKI=",
+        "birthDay": "",
+        "phone": ""
+    },
+    "aforro2": {
+        "userId": "aforro2",
+        "userName": "김종수",
+        "salt": "u8canYl75E1m5tDb4PPWLlprBPFzqvm6SZBD43J5kOSzZ7dUbwC93zEPqSaPTTSJVu1qw04QY5q9SW/+B/H3JA==",
+        "pwd": "lT1DgDFMfv9qAcqN0C4w1grSXGRpZmEnwsRJNYjXAazXzK8vrDVq8RAR9fUmseTUaXjLYYViUP6Dzw6J3QL4DBeeWJjWgvmija/7ap0Dx87KvMGGG7rEHaiR65dlxDh97LipzgMCG+Cqkq9GACnX11rLsS65fIEhgIZO1H+O+A0=",
+        "birthDay": "19860124",
+        "phone": "010-2253-2382"
+    },
+    "": {
+        "userId": "",
+        "userName": "",
+        "salt": "srEVCQrMnvKEVPGyRSu++DqeLXE1oIcvk1+NukxEwENZdyR8pgOXcZgL16MF4Mlh4tk9uq83BpNCa/VOTglJuQ==",
+        "pwd": "Y7aXSZ/Soogd5uTqzBtI2JMErsHdQT0+csBzqGopac+vEsv42H2zQ1s4lFWj2mk8Masw4DJKcHBuqUqGR65XvxJssbedG+Wl89lXNvoLfLiJ2Toh8cvYhGM4OHcQ6VDyCc7bxUrxU71RCkyFfPm6daVGukAjgs7AksioS4drzpI=",
+        "birthDay": "",
+        "phone": ""
+    },
+    "aforro4": {
+        "userId": "aforro4",
+        "userName": "김종수",
+        "salt": "ahSqesXpZEg/AW4EiMWHRgHjFKL0XSbM5l4xxpW24zz7RPXbuMCsIbuYFAJ7Igp6bdrmr+HrLM67Gw/jkb4xHw==",
+        "pwd": "qp80w4wEvuKOI/jiJfNCOYf/Jr3j3Gf8nLjkXq/NEMAkzIeSbDkQlg6Zqfuqird1GpcGTbEeER4TOyILwBYLpD5E+2CMcfRdAOLJ/cU4Bxzf89+I93yWIhH+z+zoKRNQx2ESKMd/xKphmYYoO1sunHeR7dfkVIQevGy4lx9wii0=",
+        "birthDay": "19860124",
+        "phone": "0121151515110"
+    }
+}
