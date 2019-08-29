@@ -157,14 +157,14 @@ class Detailsrch extends Component {
         }
         this.selectedlocals = (value) => {
             // console.log(document.getElementById(e.target.innerText));
-            if(document.getElementById(value))document.getElementById(value).classList.remove('btnclicked');
+            if (document.getElementById(value)) document.getElementById(value).classList.remove('btnclicked');
             let currentlocal = this.state.localdetail.slice();
             let localnum = currentlocal.indexOf(value);
             currentlocal.splice(localnum, 1);
             this.setState({
                 localdetail: currentlocal,
             })
-            
+
         }
     }
     componentDidMount() {
@@ -180,9 +180,9 @@ class Detailsrch extends Component {
                     <div className="localflex">
                         <div className="localflexname"><span className="firstcondition">지역</span></div>
                         <div className="localflexselected">
-                            {this.state.localdetail[0]? this.state.localdetail.slice().map((value, index)=>{
-                                return <div className="selectedlocals" key={index}><div className="selectedlocalsfront" onClick={()=>this.selectedlocals(value)}>{value}</div><div className="selectedlocalsback" onClick={()=>this.selectedlocals(value)}>누르면 삭제</div></div>
-                            }):""}
+                            {this.state.localdetail[0] ? this.state.localdetail.slice().map((value, index) => {
+                                return <div className="selectedlocals" key={index}><div className="selectedlocalsfront" onClick={() => this.selectedlocals(value)}>{value}</div><div className="selectedlocalsback" onClick={() => this.selectedlocals(value)}>누르면 삭제</div></div>
+                            }) : ""}
                         </div>
                     </div>
                     <ul>
