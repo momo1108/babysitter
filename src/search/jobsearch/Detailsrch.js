@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Jumbotron } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { Btnfunctionstr, Btnfunctionnum, Btnfunctionlocal } from './Locals/Btnfunction';
 import axios from 'axios';
 
@@ -208,31 +209,158 @@ class Detailsrch extends Component {
                 <div className="listbox">
                     {this.state.userdata ? this.state.userdata.slice().map((value, index) => {
                         return (
-                            <div className="listitem" key={index}>
-                                <div className="imgdiv">
-                                    <img src={require('../img/default.png')} /><br />
-                                    <span className="cardinfo">{value.userName}({value.gender == 'male' ? '남' : '여'}/{value.nationality == 'korea' ? '한국' : '외국인'}) │ {value.age}살</span>
-                                </div>
-                                <div className="desdiv">
-                                    <div className="desdivtitle">
-                                        <div className="userinfo">
-                                            <p className="cardbody">{value.address}</p>
-                                            <p className="cardbody">{value.workStart} ~ {value.workEnd}</p>
+                            <NavLink to="jobsearch/detail">
+                                <div className="listitem" key={index}>
+                                    <div className="imgdiv">
+                                        <img src={require('../img/default.png')} /><br />
+                                        <span className="cardinfo">{value.userName}({value.gender == 'male' ? '남' : '여'}/{value.nationality == 'korea' ? '한국' : '외국인'}) │ {value.age}살</span>
+                                    </div>
+                                    <div className="desdiv">
+                                        <div className="desdivtitle">
+                                            <div className="userinfo">
+                                                <p className="cardbody">{value.address}</p>
+                                                <p className="cardbody">{value.workStart} ~ {value.workEnd}</p>
+                                            </div>
+                                        </div>
+                                        <div className="desdivbody">
+                                            <p className="usertitle">{value.title}</p>
+                                            <p className="userbody">{value.body}</p>
+                                        </div>
+                                        <div className="desdivfooter">
+                                            <p className="userinfo2">{'희망 ' + value.payment}</p>
+                                            <p className="userinfo2">{'경력 ' + value.career + '년'}</p>
+                                            <p className="userinfo2">근무 형태 : {value.type === 0 ? '모든 형태가능' : value.type === 1 ? '출퇴근' : value.type === 2 ? '입주' : value.type === 3 ? '재택' : value.type === 4 ? '출퇴근&입주' : '출퇴근&재택'}</p>
                                         </div>
                                     </div>
-                                    <div className="desdivbody">
-                                        <p className="usertitle">{value.title}</p>
-                                        <p className="userbody">{value.body}</p>
-                                    </div>
-                                    <div className="desdivfooter">
-                                        <p className="userinfo2">{'희망 ' + value.payment}</p>
-                                        <p className="userinfo2">{'경력 ' + value.career + '년'}</p>
-                                        <p className="userinfo2">근무 형태 : {value.type === 0 ? '모든 형태가능' : value.type === 1 ? '출퇴근' : value.type === 2 ? '입주' : value.type === 3 ? '재택' : value.type === 4 ? '출퇴근&입주' : '출퇴근&재택'}</p>
-                                    </div>
                                 </div>
-                            </div>
+                            </NavLink>
                         )
                     }) : ''}
+                    <NavLink to="jobsearch/detail">
+                        <div className="listitem">
+                            <div className="imgdiv">
+                                <img src={require('../img/default.png')} /><br />
+                                {/* <span className="cardinfo">{value.userName}({value.gender == 'male' ? '남' : '여'}/{value.nationality == 'korea' ? '한국' : '외국인'}) │ {value.age}살</span> */}
+                            </div>
+                            <div className="desdiv">
+                                <div className="desdivtitle">
+                                    <div className="userinfo">
+                                        {/* <p className="cardbody">{value.address}</p>
+                                            <p className="cardbody">{value.workStart} ~ {value.workEnd}</p> */}
+                                    </div>
+                                </div>
+                                <div className="desdivbody">
+                                    {/* <p className="usertitle">{value.title}</p>
+                                        <p className="userbody">{value.body}</p> */}
+                                </div>
+                                <div className="desdivfooter">
+                                    {/* <p className="userinfo2">{'희망 ' + value.payment}</p>
+                                        <p className="userinfo2">{'경력 ' + value.career + '년'}</p>
+                                        <p className="userinfo2">근무 형태 : {value.type === 0 ? '모든 형태가능' : value.type === 1 ? '출퇴근' : value.type === 2 ? '입주' : value.type === 3 ? '재택' : value.type === 4 ? '출퇴근&입주' : '출퇴근&재택'}</p> */}
+                                </div>
+                            </div>
+                        </div>
+                    </NavLink>
+                    <NavLink to="jobsearch/detail">
+                        <div className="listitem">
+                            <div className="imgdiv">
+                                <img src={require('../img/default.png')} /><br />
+                                {/* <span className="cardinfo">{value.userName}({value.gender == 'male' ? '남' : '여'}/{value.nationality == 'korea' ? '한국' : '외국인'}) │ {value.age}살</span> */}
+                            </div>
+                            <div className="desdiv">
+                                <div className="desdivtitle">
+                                    <div className="userinfo">
+                                        {/* <p className="cardbody">{value.address}</p>
+                                            <p className="cardbody">{value.workStart} ~ {value.workEnd}</p> */}
+                                    </div>
+                                </div>
+                                <div className="desdivbody">
+                                    {/* <p className="usertitle">{value.title}</p>
+                                        <p className="userbody">{value.body}</p> */}
+                                </div>
+                                <div className="desdivfooter">
+                                    {/* <p className="userinfo2">{'희망 ' + value.payment}</p>
+                                        <p className="userinfo2">{'경력 ' + value.career + '년'}</p>
+                                        <p className="userinfo2">근무 형태 : {value.type === 0 ? '모든 형태가능' : value.type === 1 ? '출퇴근' : value.type === 2 ? '입주' : value.type === 3 ? '재택' : value.type === 4 ? '출퇴근&입주' : '출퇴근&재택'}</p> */}
+                                </div>
+                            </div>
+                        </div>
+                    </NavLink>
+                    <NavLink to="jobsearch/detail">
+                        <div className="listitem">
+                            <div className="imgdiv">
+                                <img src={require('../img/default.png')} /><br />
+                                {/* <span className="cardinfo">{value.userName}({value.gender == 'male' ? '남' : '여'}/{value.nationality == 'korea' ? '한국' : '외국인'}) │ {value.age}살</span> */}
+                            </div>
+                            <div className="desdiv">
+                                <div className="desdivtitle">
+                                    <div className="userinfo">
+                                        {/* <p className="cardbody">{value.address}</p>
+                                            <p className="cardbody">{value.workStart} ~ {value.workEnd}</p> */}
+                                    </div>
+                                </div>
+                                <div className="desdivbody">
+                                    {/* <p className="usertitle">{value.title}</p>
+                                        <p className="userbody">{value.body}</p> */}
+                                </div>
+                                <div className="desdivfooter">
+                                    {/* <p className="userinfo2">{'희망 ' + value.payment}</p>
+                                        <p className="userinfo2">{'경력 ' + value.career + '년'}</p>
+                                        <p className="userinfo2">근무 형태 : {value.type === 0 ? '모든 형태가능' : value.type === 1 ? '출퇴근' : value.type === 2 ? '입주' : value.type === 3 ? '재택' : value.type === 4 ? '출퇴근&입주' : '출퇴근&재택'}</p> */}
+                                </div>
+                            </div>
+                        </div>
+                    </NavLink>
+                    <NavLink to="jobsearch/detail">
+                        <div className="listitem">
+                            <div className="imgdiv">
+                                <img src={require('../img/default.png')} /><br />
+                                {/* <span className="cardinfo">{value.userName}({value.gender == 'male' ? '남' : '여'}/{value.nationality == 'korea' ? '한국' : '외국인'}) │ {value.age}살</span> */}
+                            </div>
+                            <div className="desdiv">
+                                <div className="desdivtitle">
+                                    <div className="userinfo">
+                                        {/* <p className="cardbody">{value.address}</p>
+                                            <p className="cardbody">{value.workStart} ~ {value.workEnd}</p> */}
+                                    </div>
+                                </div>
+                                <div className="desdivbody">
+                                    {/* <p className="usertitle">{value.title}</p>
+                                        <p className="userbody">{value.body}</p> */}
+                                </div>
+                                <div className="desdivfooter">
+                                    {/* <p className="userinfo2">{'희망 ' + value.payment}</p>
+                                        <p className="userinfo2">{'경력 ' + value.career + '년'}</p>
+                                        <p className="userinfo2">근무 형태 : {value.type === 0 ? '모든 형태가능' : value.type === 1 ? '출퇴근' : value.type === 2 ? '입주' : value.type === 3 ? '재택' : value.type === 4 ? '출퇴근&입주' : '출퇴근&재택'}</p> */}
+                                </div>
+                            </div>
+                        </div>
+                    </NavLink>
+                    <NavLink to="jobsearch/detail">
+                        <div className="listitem">
+                            <div className="imgdiv">
+                                <img src={require('../img/default.png')} /><br />
+                                {/* <span className="cardinfo">{value.userName}({value.gender == 'male' ? '남' : '여'}/{value.nationality == 'korea' ? '한국' : '외국인'}) │ {value.age}살</span> */}
+                            </div>
+                            <div className="desdiv">
+                                <div className="desdivtitle">
+                                    <div className="userinfo">
+                                        {/* <p className="cardbody">{value.address}</p>
+                                            <p className="cardbody">{value.workStart} ~ {value.workEnd}</p> */}
+                                    </div>
+                                </div>
+                                <div className="desdivbody">
+                                    {/* <p className="usertitle">{value.title}</p>
+                                        <p className="userbody">{value.body}</p> */}
+                                </div>
+                                <div className="desdivfooter">
+                                    {/* <p className="userinfo2">{'희망 ' + value.payment}</p>
+                                        <p className="userinfo2">{'경력 ' + value.career + '년'}</p>
+                                        <p className="userinfo2">근무 형태 : {value.type === 0 ? '모든 형태가능' : value.type === 1 ? '출퇴근' : value.type === 2 ? '입주' : value.type === 3 ? '재택' : value.type === 4 ? '출퇴근&입주' : '출퇴근&재택'}</p> */}
+                                </div>
+                            </div>
+                        </div>
+                    </NavLink>
                 </div>
             </div>
         );
