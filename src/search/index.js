@@ -22,3 +22,14 @@ export class Jobsearch extends Component {
         );
     }
 };
+export class Detailpage extends Component {
+    constructor(props) {
+        super(props);
+        
+    }
+    render() {
+        return (
+            "nothing"
+        )
+    }
+}

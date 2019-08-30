@@ -13,7 +13,7 @@ import {
     NavLink,
     HashRouter
 } from "react-router-dom";
-import {Humansearch, Jobsearch} from "./search";
+import {Humansearch, Jobsearch, Detailpage} from "./search";
 const axios = require("axios");
 
 class Register extends React.Component {
@@ -135,6 +135,7 @@ class App extends React.Component {
                                 <Route exact path="/jobsearch" component={Jobsearch} />
                                 <Route exact path="/humansearch" component={Humansearch} />
                                 <Route exact path="/register" component={Register} />
+                                <Route exact path="/jobsearch/detail" component={Detailpage} />
                             </Col>
                         </Row>
                     </HashRouter>
