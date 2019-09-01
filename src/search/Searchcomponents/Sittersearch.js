@@ -91,15 +91,18 @@ class Sittersearch extends Component {
                 method: 'post',
                 type: 'json',
                 data: {
-                    local: '전체',
-                    localdetail: [],
-                    day: [],
-                    baby_age: [],
-                    workTime_start: 0,
-                    workTime_end: 0,
-                    care_type: [],
-                    sitter_age_from: 0,
-                    sitter_age_to: 0
+                    care_area: {
+                        addr1: this.state.local,
+                        addr2: this.state.localdetail
+                    },
+                    care_date: {
+                        days: this.state.day,
+                        start_time: this.state.workTime_start,
+                        end_time: this.state.workTime_end
+                    },
+                    children: this.state.baby_age,
+                    activity: this.state.care_type,
+                    range_age: [this.state.sitter_age_from, this.state.sitter_age_to]
                 }
             })
                 .then(res => {
