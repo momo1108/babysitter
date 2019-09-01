@@ -1,35 +1,48 @@
 import React, { Component } from 'react';
-import Detailsrch from './jobsearch/Detailsrch';
-import Lists from './jobsearch/Lists';
+import Searchone from './Searchcomponents/Jobsearch';
+import Searchtwo from './Searchcomponents/Sittersearch';
+import Detailpageone from './Searchcomponents/Jobdetailpage';
+import Detailpagetwo from './Searchcomponents/Sitterdetailpage';
 
-export class Humansearch extends Component {
-    render() {
-        return (
-            <div className='bodydiv'>
-                <div className='searchtitle'>인재정보검색</div>
-                <Detailsrch />
-            </div>
-        );
-    }
-};
 export class Jobsearch extends Component {
     render() {
         return (
             <div className='bodydiv'>
                 <div className='searchtitle'>채용정보검색</div>
-                <Detailsrch />
+                <Searchone />
             </div>
         );
     }
 };
-export class Detailpage extends Component {
+export class Sittersearch extends Component {
+    render() {
+        return (
+            <div className='bodydiv'>
+                <div className='searchtitle'>인재정보검색</div>
+                <Searchtwo />
+            </div>
+        );
+    }
+};
+export class Jobdetailpage extends Component {
     constructor(props) {
         super(props);
         
     }
     render() {
         return (
-            "nothing"
+            <Detailpageone />
+        )
+    }
+}
+export class Sitterdetailpage extends Component {
+    constructor(props) {
+        super(props);
+        
+    }
+    render() {
+        return (
+            <Detailpagetwo />
         )
     }
 }

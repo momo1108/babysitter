@@ -6,23 +6,7 @@ import { passIdAction } from '../../redux/actions/actions';
 import { Btngenerator, Selectbox, Slider } from './Locals/Searchhelper';
 import axios from 'axios';
 
-class Detailsrch extends Component {
-    // 검색 조건은 요일 - 전체, 월, 화, 수, 목, 금, 토, 일
-    // 시간대 - 시작시간 select box, 종료시간 select box
-    // 아이 나이 - 신생아, 영아, 유아, 초등학생
-    // 희망시급 - 가능하면 Range Slider 안되면 select box
-    // 돌봄 종류 - {
-    //     a1: { name: "실내놀이", 사용유무: true | false } ,
-    //     a2: { name: "등하원돕기", 사용유무: true | false } ,
-    //     a3: { name: "영어놀이", 사용유무: true | false } ,
-    //     a4: { name: "한글놀이", 사용유무: true | false } ,
-    //     a5: { name: "학습지도", 사용유무: true | false },
-    //     a6: { name: "야외지도", 사용유무: true | false },
-    //     a7: { name: "밥 챙겨주기", 사용유무: true | false },
-    //     a8: { name: "책 읽기", 사용유무: true | false },
-    //     }
-    // 아이 수 - 무관, 1, 2
-    // 버튼 렌더링은 컴포넌트로 각각의 css를 적용할 클래스값을 props로 받는다.
+class Jobsearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,7 +48,7 @@ class Detailsrch extends Component {
                 [e.target.id]: e.target.title
             })
         }
-        this.timesetter = (e) => {
+        this.selectsetter = (e) => {
             this.setState({
                 [e.target.id]: e.target.selectedIndex
             });
@@ -79,25 +63,57 @@ class Detailsrch extends Component {
             method: 'post',
             type: 'json',
             data: {
-                local: this.state.local,
-                localdetail: this.state.localdetail,
-                type: this.state.type,
-                career: this.state.career,
-                nationality: this.state.nationality,
-                gender: this.state.gender
+                care_area: {
+                    addr1: this.state.local,
+                    addr2: this.state.localdetail
+                },
+                care_date: {
+                    days: this.state.day,
+                    start_time: this.state.workTime_start,
+                    end_time: this.state.workTime_end
+                },
+                children: this.state.baby_age,
+                activity: this.state.care_type,
+                hope_h_wage: this.state.hope_h_wage
             }
         })
             .then(res => {
                 this.setState({
-                    userdata: res.data
+                    parents: res.data
                 })
             })
             .catch(err => {
                 console.log('Error : ', err);
             })
-    }
-    componentDidMount() {
-
+        this.search = (e) => {
+            axios({
+                url: '/api/search/show',
+                method: 'post',
+                type: 'json',
+                data: {
+                    care_area: {
+                        addr1: this.state.local,
+                        addr2: this.state.localdetail
+                    },
+                    care_date: {
+                        days: this.state.day,
+                        start_time: this.state.workTime_start,
+                        end_time: this.state.workTime_end
+                    },
+                    children: this.state.baby_age,
+                    activity: this.state.care_type,
+                    hope_h_wage: this.state.hope_h_wage
+                }
+            })
+                .then(res => {
+                    this.setState({
+                        parents: res.data
+                    })
+                })
+                .catch(err => {
+                    console.log('Error : ', err);
+                })
+        }
     }
     render() {
         let wage = this.state.hope_h_wage.slice(0, this.state.hope_h_wage.length-3) + "," + this.state.hope_h_wage.slice(this.state.hope_h_wage.length-3);
@@ -116,9 +132,9 @@ class Detailsrch extends Component {
                     <div className="searchlist">
                         <div><b className="boldtitle">시간대</b></div>
                         <div className="btnbox">
-                            <Selectbox btnnames={["오전 7시", "오전 8시", "오전 9시", "오전 10시", "오전 11시", "오전 12시", "오후 1시", "오후 2시", "오후 3시", "오후 4시", "오후 5시", "오후 6시", "오후 7시", "오후 8시", "오후 9시", "오후 10시"]} forstate="workTime_start" setter={this.timesetter} />
+                            <Selectbox btnnames={["오전 7시", "오전 8시", "오전 9시", "오전 10시", "오전 11시", "오전 12시", "오후 1시", "오후 2시", "오후 3시", "오후 4시", "오후 5시", "오후 6시", "오후 7시", "오후 8시", "오후 9시", "오후 10시"]} forstate="workTime_start" setter={this.selectsetter} />
                             <p>부터</p>
-                        <Selectbox btnnames={["오전 7시", "오전 8시", "오전 9시", "오전 10시", "오전 11시", "오전 12시", "오후 1시", "오후 2시", "오후 3시", "오후 4시", "오후 5시", "오후 6시", "오후 7시", "오후 8시", "오후 9시", "오후 10시"]} forstate="workTime_end" setter={this.timesetter} />
+                        <Selectbox btnnames={["오전 7시", "오전 8시", "오전 9시", "오전 10시", "오전 11시", "오전 12시", "오후 1시", "오후 2시", "오후 3시", "오후 4시", "오후 5시", "오후 6시", "오후 7시", "오후 8시", "오후 9시", "오후 10시"]} forstate="workTime_end" setter={this.selectsetter} />
                             <p>까지</p>
                         </div>
                     </div>
@@ -126,10 +142,10 @@ class Detailsrch extends Component {
                         <div><b className="boldtitle">아이 나이</b></div>
                         <Btngenerator btnnames={["신생아<br/>0~6개월", "영아<br/>7~36개월", "유아<br/>4~6세", "초등학생"]} forstate="baby_age" setter={this.multisetter} />
                     </div>
-                    <div className="searchlist">
+                    {/* <div className="searchlist">
                         <div><b className="boldtitle">아이 수</b></div>
                         <Btngenerator btnnames={["무관", "1명", "2명"]} forstate="baby_num" setter={this.singlesetter} />
-                    </div>
+                    </div> */}
                     <div className="searchlist">
                         <div><b className="boldtitle">돌봄 내용</b></div>
                         <Btngenerator btnnames={["실내 놀이", "등하원 돕기", "영어 놀이", "한글 놀이", "학습 지도", "야외 지도", "밥 챙겨주기", "책 읽기"]} forstate="care_type" setter={this.multisetter} />
@@ -141,9 +157,12 @@ class Detailsrch extends Component {
                             <Slider forstate="hope_h_wage" setter={this.slidesetter} />
                         </div>
                     </div>
+                    <button className="searchbtn" onClick={this.search}>
+                        검색하기
+                    </button>
                 </Jumbotron>
                 <div className="listbox">
-                    {this.state.userdata ? this.state.userdata.slice().map((value, index) => {
+                    {this.state.parents ? this.state.parents.slice().map((value, index) => {
                         return (
                             <NavLink to="jobsearch/detail">
                                 <div className="listitem" key={index} onClick={() => this.props.passIdAction(1)}>
@@ -178,4 +197,4 @@ class Detailsrch extends Component {
     }
 };
 
-export default connect(null, { passIdAction })(Detailsrch);
+export default connect(null, { passIdAction })(Jobsearch);

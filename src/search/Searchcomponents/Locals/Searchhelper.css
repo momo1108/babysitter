@@ -1,13 +1,15 @@
 .searchjumbo {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 80px;
 }
 .searchlist {
     display: inline-block;
     min-width: 300px;
     min-height: 60px;
     font-size: 13px;
-    margin: 0 20px 0 20px;
+    margin: 0 30px 30px 30px;
 }
 .boldtitle {
     font-size: 18px;
@@ -16,11 +18,36 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    min-width: 300px;
     min-height: 65px;
+    flex-wrap: wrap;
+}
+.btnbox button {
+    margin: 5px 5px 5px 5px !important;
 }
 .sliderbox {
     text-align: center;
     height: 100px;
+}
+.searchbtn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none !important;
+    font-weight: bold;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    background: rgba(0, 123, 255, 0.801);
+    cursor: pointer;
+}
+.searchbtn:hover {
+    background: rgb(0, 123, 255);
 }
 #day {
     background: none;
@@ -107,6 +134,19 @@
     outline: none;
 }
 #workTime_start option, #workTime_end option {
+    height: 300px !important;
+}
+#sitter_age_from, #sitter_age_to {
+    margin: 10px;
+    background: rgb(0, 123, 255);
+    color: white;
+    padding: 0 10px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#sitter_age_from option, #sitter_age_to option {
     height: 300px !important;
 }
 .btnbox p{

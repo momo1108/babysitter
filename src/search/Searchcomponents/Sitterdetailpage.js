@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Detailpage.css';
+import './Sitterdetailpage.css';
 
-class Detailpage extends Component {
+export default class Detailpage extends Component {
     constructor(props) {
         super(props);
 
