@@ -11,53 +11,6 @@
     padding: 10px;
     background-color: white;
 }
-.searchjumbo p {
-    padding-left: 10px;
-    font-size: 20px;
-    font-weight: bold;
-}
-.worktype {
-    display: inline-block;
-    padding-left: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    margin-right: 20px;
-}
-.firstcondition {
-    padding-left: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 8px 0;
-}
-.searchjumbo ul {
-    list-style: none;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 0;
-    padding: 0;
-}
-.searchjumbo ul li {
-    display: inline-block;
-    color: black;
-    font-size: 1vw;
-    text-align: center;
-    border-radius: 5px 5px 0 0;
-    width: 5.555%;
-    box-sizing: border-box;
-    padding: 6px 0;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid rgb(100, 97, 255);
-    cursor: pointer;
-}
-.searchjumbo ul li:hover {
-    border-top: 1px solid rgb(140, 203, 255);
-    border-left: 1px solid rgb(140, 203, 255);
-    border-right: 1px solid rgb(140, 203, 255);
-    border-bottom: 1px solid transparent;
-    color: rgb(140, 203, 255);
-}
 .localtext {
     display: inline-block;
     width: 100%;
