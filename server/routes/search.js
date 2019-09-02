@@ -13,6 +13,7 @@ router.post('/jobshow', (req, res) => {
     console.log('활동 종류 : ' + req.body.activity);
     console.log('희망시급 : ' + req.body.hope_h_wage);
     let select = {};
+    let area = {};
     // if (req.body.care_area[0]) {
     //     let arr = [];
     //     if (req.body.care_area.length === 1) {
@@ -32,15 +33,21 @@ router.post('/jobshow', (req, res) => {
     //                 addr2: req.body.care_area[0].split(" ")[1]
     //             } });
     //         }
-    //         select = { $or: arr }
+    //         area = { $or: arr }
     //     }
     // }
-
-    // select.care_date = {};
+    
     // if (req.body.days.length === 0){
     // } else{
+    //     select.care_date = {};
     //     req.body.days.sort();
-    //     select.care_date.days = req.body.days;
+    //     if(req.body.days.length === 1){
+    //         select.care_date.days = {$elemMatch: {$eq: req.body.days[0]}};
+    //     } else {
+    //         req.body.days.forEach((e,i)=>{
+    //             select.care_date.$and.push({days: {$elemMatch: {$eq: e}}});
+    //         })
+    //     }
     // }
     // if(req.body.start_time === 0 && req.body.end_time === 0){
     // } else{
@@ -66,7 +73,11 @@ router.post('/jobshow', (req, res) => {
         req.body.activity.forEach((e,i)=>{
             activityarr.push({activity: {$elemMatch: {$eq: e}}});
         })
-        select.$and = [{$or: childarr}, {$or: activityarr}];
+        if(req.body.care_area.length>1){
+            select.$and = [{$or: childarr}, {$or: activityarr}, area];
+        } else {
+            select.$and = [{$or: childarr}, {$or: activityarr}];
+        }
     } else {
         if(req.body.children.length===0){
         } else if(req.body.children.length===1){

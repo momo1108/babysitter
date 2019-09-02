@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import local from './address';
-import './Searchhelper.css';
 
 export class Btngenerator extends Component {
     constructor(props) {

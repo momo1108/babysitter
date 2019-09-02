@@ -113,61 +113,6 @@ class Sittersearch extends Component {
                 e.target.classList.add('localclick');
             };
         }
-        // this.wholelocal = (e) => {
-        //     let currentlocal = this.state.localdetail.slice();
-        //     if (e.target.classList.contains('btnclicked')) {
-        //         let localnum = currentlocal.indexOf(e.target.innerText);
-        //         currentlocal.splice(localnum, 1);
-        //         this.setState({
-        //             localdetail: currentlocal,
-        //         })
-        //         e.target.classList.toggle('btnclicked');
-        //         return;
-        //     }
-        //     let i = 0;
-        //     while (1) {
-        //         if (!currentlocal[i]) break;
-        //         let splitlocal = currentlocal[i].split(" ");
-        //         if (splitlocal[0] === this.state.local) {
-        //             currentlocal.splice(i, 1);
-        //         } else {
-        //             i++;
-        //         }
-        //     }
-        //     if (currentlocal.length === 1) return;
-        //     else {
-        //         for (let j = 0; j < document.getElementsByClassName('localdiv')[0].children.length; j++) {
-        //             document.getElementsByClassName('localdiv')[0].children[j].classList.remove('btnclicked');
-        //         }
-        //         currentlocal.push(this.state.local + ' 전체');
-        //         document.getElementsByClassName('localdiv')[0].children[0].classList.add('btnclicked');
-        //     }
-        //     this.setState({
-        //         localdetail: currentlocal
-        //     })
-        // }
-        axios({
-            url: '/api/search/show',
-            method: 'post',
-            type: 'json',
-            data: {
-                care_area: this.state.localdetail,
-                days: this.state.day,
-                start_time: this.state.workTime_start,
-                end_time: this.state.workTime_end,
-                children: this.state.baby_age,
-                activity: this.state.care_type,
-                range_age: [this.state.sitter_age_from, this.state.sitter_age_to]
-            }
-        })
-            .then(res => {
-                this.setState({
-                    sitters: res.data
-                })
-            })
-            .catch(err => {
-                console.log('Error : ', err);
-            })
         this.search = (e) => {
             axios({
                 url: '/api/search/show',

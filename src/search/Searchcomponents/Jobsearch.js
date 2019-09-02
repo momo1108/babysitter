@@ -61,28 +61,6 @@ class Jobsearch extends Component {
                 [e.target.id]: e.target.value
             })
         }
-        axios({
-            url: '/api/search/jobshow',
-            method: 'post',
-            type: 'json',
-            data: {
-                care_area: this.state.localdetail,
-                days: this.state.day,
-                start_time: this.state.workTime_start,
-                end_time: this.state.workTime_end,
-                children: this.state.baby_age,
-                activity: this.state.care_type,
-                hope_h_wage: this.state.hope_h_wage
-            }
-        })
-            .then(res => {
-                this.setState({
-                    parents: res.data
-                })
-            })
-            .catch(err => {
-                console.log('Error : ', err);
-            })
         this.search = (e) => {
             axios({
                 url: '/api/search/jobshow',
