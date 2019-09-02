@@ -1,4 +1,7 @@
 @charset "UTF-8";
+::-webkit-scrollbar {
+    display: none;
+}
 .searchtitle {
     font-size: 30px;
     text-align: center;
@@ -10,6 +13,42 @@
     margin: 0 auto;
     padding: 10px;
     background-color: white;
+}
+.searchjumbo p {
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.localdiv {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.searchjumbo ul {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    margin: 10px 10px 0 10px;
+    padding: 0;
+}
+.searchjumbo ul li {
+    display: inline-block;
+    color: black;
+    font-size: 1vw;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    width: 5.555%;
+    box-sizing: border-box;
+    padding: 6px 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgb(100, 97, 255);
+    cursor: pointer;
+}
+.searchjumbo ul li:hover {
+    border-top: 1px solid rgb(140, 203, 255);
+    border-left: 1px solid rgb(140, 203, 255);
+    border-right: 1px solid rgb(140, 203, 255);
+    border-bottom: 1px solid transparent;
+    color: rgb(140, 203, 255);
 }
 .localtext {
     display: inline-block;
@@ -137,15 +176,220 @@ hr {
 }
 .localflex {
     display: flex;
-}
-.localflexname {
-    display: inline-flex;
-    width: 15%;
-}
-.localflexselected {
-    display: inline-flex;
+    width: 100%;
     flex-direction: row-reverse;
-    width: 85%;
     align-content: center;
-    padding: 20px 0;
+}
+
+.searchjumbo {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 80px;
+}
+.searchlist {
+    display: inline-block;
+    min-width: 300px;
+    min-height: 60px;
+    font-size: 13px;
+    margin: 15px 30px 15px 30px;
+}
+.firstsearchlist {
+    margin: 0 0 0 30px;
+}
+.boldtitle {
+    font-size: 18px;
+}
+.btnbox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 300px;
+    min-height: 65px;
+    flex-wrap: wrap;
+}
+.btnbox button {
+    margin: 5px 5px 5px 5px !important;
+}
+.sliderbox {
+    text-align: center;
+    height: 100px;
+}
+.searchbtn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none !important;
+    font-weight: bold;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    background: rgba(0, 123, 255, 0.801);
+    cursor: pointer;
+}
+.searchbtn:hover {
+    background: rgb(0, 123, 255);
+}
+#day {
+    background: none;
+    width: 28px;
+    height: 28px;
+    outline: none !important;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+#day:hover {
+    font-weight: bold;
+}
+#day.btnclicked {
+    background: rgb(0, 123, 255);
+    border-color: rgb(0, 123, 255);
+    color: white;
+}
+#baby_age {
+    margin: 0 5px;
+    width: 72px;
+    height: 45px;
+    background: none;
+    outline: none !important;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 7px;
+    transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+#baby_age:hover {
+    font-weight: bold;
+}
+#baby_age.btnclicked {
+    background: rgb(0, 123, 255);
+    border-color: rgb(0, 123, 255);
+    color: white;
+}
+#care_type {
+    width: 90px;
+    height: 38px;
+    background: none;
+    outline: none !important;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 19px;
+    margin: 0 5px;
+    transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+#care_type:hover {
+    font-weight: bold;
+}
+#care_type.btnclicked {
+    background: rgb(0, 123, 255);
+    border-color: rgb(0, 123, 255);
+    color: white;
+}
+
+#baby_num {
+    width: 70px;
+    height: 30px;
+    background: none;
+    outline: none !important;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 15px;
+    margin: 0 5px;
+    transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+#baby_num:hover {
+    font-weight: bold;
+}
+#baby_num.btnclicked {
+    background: rgb(0, 123, 255);
+    border-color: rgb(0, 123, 255);
+    color: white;
+}
+
+#workTime_start, #workTime_end {
+    margin: 10px;
+    background: rgb(0, 123, 255);
+    color: white;
+    padding: 0 10px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#workTime_start option, #workTime_end option {
+    height: 300px !important;
+}
+#sitter_age_from, #sitter_age_to {
+    margin: 10px;
+    background: rgb(0, 123, 255);
+    color: white;
+    padding: 0 10px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#sitter_age_from option, #sitter_age_to option {
+    height: 300px !important;
+}
+.btnbox p{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 50px;
+}
+
+#hope_h_wage {
+    -webkit-appearance: none;
+    position: relative;
+    width: 450px;
+    height: 15px;
+    opacity: 0.7;
+    background: rgb(214, 214, 214);
+    outline: none;
+    border-radius: 7.5px;
+}
+#hope_h_wage::before {
+    content: "8,350원";
+    font-size: 13px;
+    position: absolute;
+    top: 20px;
+    color: black;
+}
+#hope_h_wage::after {
+    content: "15,000원";
+    font-size: 13px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    color: black;
+}
+#hope_h_wage:hover {
+    opacity: 1;
+}
+#hope_h_wage::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 23px;
+    background: white;
+    border: 3px solid rgb(187, 187, 187);
+    border-radius: 50%;
+    cursor: pointer;
+}
+#hope_h_wage::-moz-range-thumb {
+    width: 23px;
+    height: 23px;
+    background: white;
+    border: 3px solid rgb(187, 187, 187);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.hope_h_wage {
+    font-size: 20px !important;
+    font-weight: bold;
+    color: grey;
 }

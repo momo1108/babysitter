@@ -9,7 +9,10 @@
     min-width: 300px;
     min-height: 60px;
     font-size: 13px;
-    margin: 0 30px 30px 30px;
+    margin: 15px 30px 15px 30px;
+}
+.firstsearchlist {
+    margin: 0 0 0 30px;
 }
 .boldtitle {
     font-size: 18px;

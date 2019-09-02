@@ -167,7 +167,6 @@ class Detailsrch extends Component {
             this.setState({
                 localdetail: currentlocal,
             })
-
         }
     }
     componentDidMount() {

@@ -1,79 +1,95 @@
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
-/**
- * 사용자 정의
- * image(string)      : 프로필 이미지 주소 - join
- * userName(string)   : 사용자 이름 - join
- * age(number)        : 사용자 나이 - join
- * address(string)    : 희망 근무지 (시/도)
- * detailaddress(string) : 상세 희망 근무지
- * workStart(date)    : 희망 근무시간(시작~)
- * workEnd(date)      : 희망 근무시간(~끝)
- * nationality(string): 국적 - join
- * title(string)      : 자기소개제목
- * body(string)       : 자기소개본문
- * payment(number)    : 희망 급여
- * type(number)       : 근무 형태
- * career(number)     : 경력 - join
- * gender(string)     : 성별 - join
- **/
-const userSchema = new Schema({
-    image: {
+
+const memberSchema = new Schema({
+    user_id: {
         type: String,
-        default: '/images/default.jpg'
+        required: true,
     },
-    userName: {
+    pwd: {
         type: String,
-        required: true
+        required: true,
     },
-    age: {
+    name: {
+        type: String,
+        required: true, 
+    },
+    birthday: {
         type: Number,
-        required: true
+        required: true, 
     },
-    address: {
+    terms_use: {
+        type: Boolean,
+        required: true, 
+    },
+    terms_personal_info: {
+        type: Boolean,
+        required: true,
+    },
+    terms_event: {
+        type: Boolean,
+        required: true,
+    },
+    self_certi: {
+        type: Boolean,
+        required: true,
+    },
+    role: {
         type: String,
-        required: true
+        required: true,
     },
-    detailaddress: {
-        type: String,
-        required: true
-    },
-    workStart: {
-        type: String,
-        required: true
-    },
-    workEnd: {
-        type: String,
-        required: true
-    },
-    nationality: {
-        type: String,
-        required: true
-    },
-    title: {
-        type: String,
-        required: true
-    },
-    body: {
-        type: String,
-        required: true
-    },
-    payment: {
-        type: String,
-        required: true
-    },
-    type: {
+    hope_h_wage: {
         type: Number,
-        required: true
+        required: true,
     },
-    career: {
-        type: Number,
-        required: true
-    },
-    gender: {
+    negotiations: {
         type: String,
-        required: true
+        required: true,
+    },
+    negotiations: {
+        type: String,
+        required: true,
+    },
+    activity: {
+        type : Array,
+        required: true,
+    },
+    // 부모 key
+    range_age: {
+        type: Array
+    },
+    children: {
+        type: Array
+    },
+    care_area: {
+        type: Object
+    },
+    care_date: {
+        type: Object
+    },
+    app_form: {
+        type: String
+    },
+    // 베이비 시터 key
+    care_age: {
+        type: Array
+    },
+    activity_area: {
+        type: Array
+    },
+    activity_date: {
+        type: Object
+    },
+    terms_cctv: {
+        type: Boolean
+    },
+    profile: {
+        type: Number
+    },
+    self_intro: {
+        type: String
     }
 });
 
-module.exports = mongoose.model('registereduser', userSchema);
+module.exports = mongoose.model('tb_member', memberSchema, 'tb_member');
