@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "cookie-parser": "^1.4.4",
     "express-session": "^1.16.2",
     "form-serialize": "^0.7.2",
